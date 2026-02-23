@@ -6,6 +6,8 @@ I worked on this project to test my NVIDIA Jetson Orin Nano and Intel RealSense 
 
 This repository documents my setup process, integration steps, and troubleshooting while combining:
 
+![Full Setup](assets/setup.jpg)
+
 - Jetson Orin Nano (JetPack Ubuntu)
 - Intel RealSense depth camera
 - YOLOv8 (Ultralytics)
@@ -24,6 +26,8 @@ This repository documents my setup process, integration steps, and troubleshooti
 ---
 
 # 1️⃣ Jetson Orin Nano Setup
+
+![Jetson Orin Nano Setup](assets/Nvidia_jetson_orin.JPG)
 
 ## Initial Flashing
 
@@ -50,6 +54,8 @@ sudo apt install python3-pip git cmake
 ---
 
 # 2️⃣ Intel RealSense Setup (ARM-Based Device)
+
+![Intel RealSense Setup](assets/Intel_realsense.JPG)
 
 RealSense is not fully plug-and-play on Jetson (ARM architecture).  
 To ensure compatibility, I built librealsense from source.
@@ -96,6 +102,8 @@ Building librealsense from source ensures the Python bindings work properly.
 ---
 
 # 4️⃣ Running Real-Time Object Detection
+
+![Object Detection](assets/object_detection.JPG)
 
 ```bash
 python3 run_yolo_realsense.py
