@@ -6,7 +6,9 @@ I worked on this project to test my NVIDIA Jetson Orin Nano and Intel RealSense 
 
 This repository documents my setup process, integration steps, and troubleshooting while combining:
 
-![Full Setup](assets/setup.jpg)
+<p align="center">
+  <img src="assets/setup.jpg" width="600"/>
+</p>
 
 - Jetson Orin Nano (JetPack Ubuntu)
 - Intel RealSense depth camera
@@ -27,7 +29,9 @@ This repository documents my setup process, integration steps, and troubleshooti
 
 # 1️⃣ Jetson Orin Nano Setup
 
-![Jetson Orin Nano Setup](assets/Nvidia_jetson_orin.JPG)
+<p align="center">
+  <img src="assets/Nvidia_jetson_orin.JPG" width="600" height="500"/>
+</p>
 
 ## Initial Flashing
 
@@ -55,7 +59,9 @@ sudo apt install python3-pip git cmake
 
 # 2️⃣ Intel RealSense Setup (ARM-Based Device)
 
-![Intel RealSense Setup](assets/Intel_realsense.JPG)
+<p align="center">
+  <img src="assets/Intel_realsense.JPG" width="600" height="500"/>
+</p>
 
 RealSense is not fully plug-and-play on Jetson (ARM architecture).  
 To ensure compatibility, I built librealsense from source.
@@ -64,7 +70,7 @@ To ensure compatibility, I built librealsense from source.
 
 ```bash
 sudo apt install git libssl-dev libusb-1.0-0-dev pkg-config \
-libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
+libgtk-3-dev libglfw3-dev lib1-mesa-dev libglu1-mesa-dev
 ```
 
 ## Clone and build librealsense
@@ -103,7 +109,9 @@ Building librealsense from source ensures the Python bindings work properly.
 
 # 4️⃣ Running Real-Time Object Detection
 
-![Object Detection](assets/object_detection.JPG)
+<p align="center">
+  <img src="assets/object_detection.jpg" width="600"/>
+</p>
 
 ```bash
 python3 run_yolo_realsense.py
@@ -122,6 +130,7 @@ The script:
 
 ## 1. Incorrect JetPack Image
 Flashed wrong board image initially.
+
 Fix:
 - Reformatted SD card
 - Re-flashed correct Orin Nano SD image
@@ -130,6 +139,7 @@ Fix:
 
 ## 2. RealSense on ARM Architecture
 RealSense SDK not fully plug-and-play on Jetson.
+
 Fix:
 - Built librealsense from source with Python bindings enabled
 
@@ -149,4 +159,11 @@ cv2.resizeWindow("Detection", 800, 600)
 
 # What This Project Demonstrates
 
-This is intentionally a simple project, focused on validating hardware, understanding the Jetson Nano environment, and creating a real-time object detection
+This is intentionally a simple project focused on:
+
+- Validating hardware setup
+- Understanding the Jetson Orin Nano environment
+- Building a real-time vision pipeline
+- Integrating camera hardware with deep learning inference on an edge device
+
+This serves as a foundational step toward more advanced computer vision and automation systems.
